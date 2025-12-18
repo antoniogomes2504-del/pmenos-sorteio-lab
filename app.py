@@ -1,3 +1,4 @@
+from streamlit_autorefresh import st_autorefresh
 import streamlit as st
 import random
 import time
@@ -47,6 +48,8 @@ historico = ler_numeros()
 ultimo_sorteado = historico[0] if historico else None
 
 st.title("🎰 Painel de Sorteio")
+# Isso vai atualizar a página de todos automaticamente a cada 5 segundos
+st_autorefresh(interval=5000, key="fizzbuzzcounter")
 
 # Barra Lateral (Controle do Dono do Sorteio)
 with st.sidebar:
